@@ -1,15 +1,15 @@
 Made in Wichita website
 
-Visitors can search for products made in Wichita.
-Visitors can search for vendors who sell Wichita-made products.
-Visitors can search for artists who produce Wichita-made products.
-Vendors can create profiles of themselves
-Vendors can add new products that they sell.
-Vendors can associate existing products with their businesses.
-Artists can create profiles of themselves.
-Artists can add new products that they create.
-Artists can associaate existing products with themselves.
-Admins can create vendor profiles, artist profiles and products.
+*	Visitors can search for products made in Wichita.
+*	Visitors can search for vendors who sell Wichita-made products.
+*	Visitors can search for artists who produce Wichita-made products.
+*	Vendors can create profiles of themselves
+*	Vendors can add new products that they sell.
+*	Vendors can associate existing products with their businesses.
+*	Artists can create profiles of themselves.
+*	Artists can add new products that they create.
+*	Artists can associaate existing products with themselves.
+*	Admins can create vendor profiles, artist profiles and products.
 
 Database Tables
 
