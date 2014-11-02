@@ -4,12 +4,14 @@ Visitors can search for products made in Wichita.
 Visitors can search for vendors who sell Wichita-made products.
 Visitors can search for artists who produce Wichita-made products.
 Vendors can create profiles of themselves
-Vendors can list Wichita-made products they sell.
+Vendors can add new products that they sell.
+Vendors can associate existing products with their businesses.
 Artists can create profiles of themselves.
-Artists can list Wichita-made products.
+Artists can add new products that they create.
+Artists can associaate existing products with themselves.
 Admins can create vendor profiles, artist profiles and products.
 
-Databases
+Database Tables
 
 Vendors
 -have many products
@@ -45,3 +47,6 @@ Categories
 Name
 Description
 
+Products_Vendors
+Vendor ID
+Product ID
