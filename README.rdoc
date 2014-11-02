@@ -1,28 +1,47 @@
-== README
+Made in Wichita website
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Visitors can search for products made in Wichita.
+Visitors can search for vendors who sell Wichita-made products.
+Visitors can search for artists who produce Wichita-made products.
+Vendors can create profiles of themselves
+Vendors can list Wichita-made products they sell.
+Artists can create profiles of themselves.
+Artists can list Wichita-made products.
+Admins can create vendor profiles, artist profiles and products.
 
-Things you may want to cover:
+Databases
 
-* Ruby version
+Vendors
+-have many products
+-have many artists (sell products from various artists)
+Name
+Description
+Location
+Hours
+Website
+Phone number
+Facebook
+Twitter
+Owner name
 
-* System dependencies
+Artists
+-have many products
+-belong to many vendors (sell their products at various vendors)
+Name
+Description
+Email
 
-* Configuration
+Products
+-belong to many vendors
+-belong to one artist
+-belong to one category
+Name
+Description
+Price
+Category
 
-* Database creation
+Categories
+-have many products
+Name
+Description
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
