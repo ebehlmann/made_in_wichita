@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102215223) do
+ActiveRecord::Schema.define(version: 20141103031057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,30 @@ ActiveRecord::Schema.define(version: 20141102215223) do
     t.integer  "artist_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "vendors", force: true do |t|
+    t.string  "name"
+    t.string  "description"
+    t.string  "owner"
+    t.string  "location"
+    t.string  "website"
+    t.string  "phone"
+    t.string  "facebook"
+    t.string  "twitter"
+    t.boolean "open_monday"
+    t.boolean "open_tuesday"
+    t.boolean "open_wednesday"
+    t.boolean "open_thursday"
+    t.boolean "open_friday"
+    t.boolean "open_saturday"
+    t.boolean "open_sunday"
+    t.time    "weekday_opening_time"
+    t.time    "weekday_closing_time"
+    t.time    "saturday_opening_time"
+    t.time    "saturday_closing_time"
+    t.time    "sunday_opening_time"
+    t.time    "sunday_closing_time"
   end
 
 end
