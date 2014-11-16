@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  resources :products
+  resources :products do
+    member do
+      post 'vendors', :to => "products#add_vendor", :as => :add_vendor_to
+      get 'vendors'
+    end
+  end
+
+  resources :vendors do
+    member do
+      post 'products', :to => "vendors#add_product", :as => :add_product_to
+      get 'products'
+    end
+  end
 end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
