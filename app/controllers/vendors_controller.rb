@@ -18,7 +18,7 @@ class VendorsController < ApplicationController
 	end
 
 	def show
-		@vendor = Product.find(params[:id])
+		@vendor = Vendor.find(params[:id])
 	end
 
 #	def edit
