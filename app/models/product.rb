@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-	has_and_belongs_to_many :vendors
+	has_many :contracts
+	has_many :vendors, :through => :contracts
 	validates :name, :description, presence: true
 	validates :price, numericality: true
 end

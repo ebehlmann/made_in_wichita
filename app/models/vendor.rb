@@ -1,5 +1,6 @@
 class Vendor < ActiveRecord::Base
-	has_and_belongs_to_many :products
+	has_many :contracts
+	has_many :products, :through => :contracts
 	validates :name, :presence => true
 	validates :description, :presence => true
 end

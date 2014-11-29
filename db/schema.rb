@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103032815) do
+ActiveRecord::Schema.define(version: 20141129232053) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contracts", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "vendor_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.string   "name"
@@ -48,11 +55,6 @@ ActiveRecord::Schema.define(version: 20141103032815) do
     t.time    "saturday_closing_time"
     t.time    "sunday_opening_time"
     t.time    "sunday_closing_time"
-  end
-
-  create_table "vendors_products", id: false, force: true do |t|
-    t.integer "vendor_id"
-    t.integer "product_id"
   end
 
 end
