@@ -1,16 +1,11 @@
 Rails.application.routes.draw do
   resources :products do
-    member do
-      post 'vendors', :to => "products#add_vendor", :as => :add_vendor_to
-      get 'vendors'
-    end
+    resources :vendors, :only => [:index]
   end
 
   resources :vendors do
-    member do
-      post 'products', :to => "vendors#add_product", :as => :add_product_to
-      get 'products'
-    end
+    resources :products
+    resources :contracts, :except => [:index, :show, :edit, :update]
   end
 end
   # The priority is based upon order of creation: first created -> highest priority.
