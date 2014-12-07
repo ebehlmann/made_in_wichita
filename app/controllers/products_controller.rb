@@ -27,7 +27,8 @@ class ProductsController < ApplicationController
 		if @product.save
 			flash[:notice] = "Product created."
 			if params[:vendor_id]							#This part is not working. Does not detect presence of vendor id
-				@contract = Contract.new(:product_id => @product.id, :vendor_id => :vendor_id)
+				vendor = Vendor.find(params[:vendor_id])
+				@contract = Contract.new(:product_id => @product.id, :vendor_id => vendor.id)
 				@contract.save
 				redirect_to vendor_products_path
 			else
