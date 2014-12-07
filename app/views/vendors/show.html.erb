@@ -8,7 +8,7 @@
 <p>Phone: <%= @vendor.phone %></p>
 <p>Website: <%= @vendor.website %></p>
 
-<h3>Products</h3>  											<!-- This is not working -->
+<h3>Products</h3>
 <ul>
 	<% @vendor.products.each do |product| %>
 		<li>
@@ -23,5 +23,5 @@
 											:data => {:confirm => "Are you sure?",
 																:method => "delete"},
 											:class => "btn btn-danger" %>
-<%= link_to "Add product for this vendor", new_product_path(@vendor), :class=> "btn btn-default" %>											
+<%= link_to "Add product for this vendor", new_vendor_product_path(@vendor), :class=> "btn btn-default" %>											
 											</p>

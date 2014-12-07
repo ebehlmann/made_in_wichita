@@ -1,20 +1,37 @@
 class ProductsController < ApplicationController
+#	before_filter :load_vendor
+
+#	def load_vendor
+#		@vendor = Vendor.find_by_id(params[:vendor_id])
+#	end
+
 	def index
-		@products = Product.all
+		if params[:vendor_id]
+			@products = Vendor.find(params[:vendor_id]).products
+		else
+			@products = Product.all
+		end
 	end
 
 	def new
-		@product = Product.new
+		if params[:vendor_id]
+			vendor = Vendor.find(params[:vendor_id])
+			@product = vendor.products.new
+		else	
+			@product = Product.new
+		end
 	end
 
 	def create
 		@product = Product.new(params[:product])
 		if @product.save
 			flash[:notice] = "Product created."
-			redirect_to products_path
-			if @vendor
-				@contract = Contract.new(:product_id => @product, :vendor_id => @vendor)
+			if params[:vendor_id]							#This part is not working. Does not detect presence of vendor id
+				@contract = Contract.new(:product_id => @product.id, :vendor_id => :vendor_id)
 				@contract.save
+				redirect_to vendor_products_path
+			else
+				redirect_to products_path
 			end
 		else
 			render 'new'
