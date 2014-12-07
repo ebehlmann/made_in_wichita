@@ -12,6 +12,10 @@ class ProductsController < ApplicationController
 		if @product.save
 			flash[:notice] = "Product created."
 			redirect_to products_path
+			if @vendor
+				@contract = Contract.new(:product_id => @product, :vendor_id => @vendor)
+				@contract.save
+			end
 		else
 			render 'new'
 		end
