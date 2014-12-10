@@ -21,24 +21,24 @@ class VendorsController < ApplicationController
 		@vendor = Vendor.find(params[:id])
 	end
 
-#	def edit
-#		@product = Product.find(params[:id])
-#	end
+	def edit
+		@vendor = Vendor.find(params[:id])
+	end
 
-#	def update
-#		@product = Product.find(params[:id])
-#		if @product.update(params[:product])
-#			flash[:notice] = "Product updated."
-#			redirect_to product_path(@product)
-#		else
-#			render 'edit'
-#		end
-#	end
+	def update
+		@vendor = Vendor.find(params[:id])
+		if @vendor.update(params[:vendor])
+			flash[:notice] = "Vendor updated."
+			redirect_to vendor_path(@vendor)
+		else
+			render 'edit'
+		end
+	end
 
-#	def destroy
-#		@product = Product.find(params[:id])
-#		@product.destroy
-#		flash[:notice] = "Product deleted."
-#		redirect_to products_path
-#	end
+	def destroy
+		@vendor = Vendor.find(params[:id])
+		@vendor.destroy
+		flash[:notice] = "Vendor deleted."
+		redirect_to vendors_path
+	end
 end
