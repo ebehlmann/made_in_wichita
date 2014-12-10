@@ -14,19 +14,20 @@ class ProductsController < ApplicationController
 	end
 
 	def new
-		if params[:vendor_id]
-			vendor = Vendor.find(params[:vendor_id])
-			@product = vendor.products.new
-		else	
-			@product = Product.new
-		end
+		@product = Product.new
+	end
+
+	def newvendor
+		vendor = Vendor.find(params[:vendor_id])
+		@product = vendor.products.new
+		render 'new_vendor_product'
 	end
 
 	def create
 		@product = Product.new(params[:product])
 		if @product.save
 			flash[:notice] = "Product created."
-			if params[:vendor_id]							#This part is not working. Does not detect presence of vendor id
+			if (params[:vendor_id])							#This part is not working. Does not detect presence of vendor id
 				vendor = Vendor.find(params[:vendor_id])
 				@contract = Contract.new(:product_id => @product.id, :vendor_id => vendor.id)
 				@contract.save

@@ -23,5 +23,6 @@
 											:data => {:confirm => "Are you sure?",
 																:method => "delete"},
 											:class => "btn btn-danger" %>
-<%= link_to "Add product for this vendor", new_vendor_product_path(@vendor), :class=> "btn btn-default" %>											
-											</p>
+<a href="/vendors/<%= @vendor.id %>/new_vendor_product">Add product for this vendor</a>											
+								
+</p>
