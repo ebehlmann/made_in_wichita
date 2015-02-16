@@ -5,9 +5,23 @@
 <p><%= @product.description %></p>
 <p>Price: <%= number_to_currency @product.price %></p>
 
+<h3>This product is available from these vendors:</h3>
+<ul>
+	<% @product.vendors.each do |vendor| %>
+		<li>
+			<a href="/vendors/<%= vendor.id %>"><%= vendor.name %></a>
+		</li>
+	<% end %>
+</ul>
+
 <p><%= link_to "Back to products list", products_path, :class => "btn btn-default" %>
 <%= link_to "Edit this product", edit_product_path(@product), :class => "btn btn-default" %>
 <%= link_to "Delete this product", product_path(@product),
 											:data => {:confirm => "Are you sure?",
 																:method => "delete"},
-											:class => "btn btn-danger" %></p>
+											:class => "btn btn-danger" %>
+<!-- Below link won't work until user authentication works!! -->
+
+<%= link_to "Vendors: Add this product to your store", new_vendor_contract_path(@vendor), :data => {:confirm => "Please confirm that you sell this product"} %> 
+
+											</p>		

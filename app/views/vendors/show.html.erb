@@ -8,11 +8,11 @@
 <p>Phone: <%= @vendor.phone %></p>
 <p>Website: <%= @vendor.website %></p>
 
-<h3>Products</h3>
+<h3>This vendor sells these Wichita-made products:</h3>
 <ul>
 	<% @vendor.products.each do |product| %>
 		<li>
-			<%= product.name %>
+			<a href="/products/<%= product.id %>"><%= product.name %></a>
 		</li>
 	<% end %>
 </ul>

@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
 				vendor = Vendor.find(params[:vendor_id])
 				@contract = Contract.new(:product_id => @product.id, :vendor_id => vendor.id)
 				@contract.save
-				redirect_to vendor_products_path
+				redirect_to vendor_path(vendor)
 			else
 				redirect_to products_path
 			end
