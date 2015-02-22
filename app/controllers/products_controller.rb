@@ -64,4 +64,8 @@ class ProductsController < ApplicationController
 		flash[:notice] = "Product deleted."
 		redirect_to products_path
 	end
+
+	def product_params
+		params.require(:product).permit(:image)
+	end
 end

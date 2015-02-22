@@ -14,5 +14,6 @@
 		<%= f.label :price %>
 		<%= f.number_field :price, step: 0.01 %>
 	</div>
+	<%= f.file_field :image %>
 	<%= f.submit(:class => "btn btn-primary") %>
 <% end %>
