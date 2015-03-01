@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :contracts, :except => [:index, :show, :edit, :update]
   end
 
+  resources :users, :except => [:index]
+
   match('vendors/:vendor_id/new_vendor_product', {:via => :get, :to => 'products#newvendor'})
 end
   # The priority is based upon order of creation: first created -> highest priority.

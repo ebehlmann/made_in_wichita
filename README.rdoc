@@ -14,8 +14,8 @@ Made in Wichita website
 Database Tables
 
 Vendors
--have many products
--have many artists (sell products from various artists)
+-belong to users
+-have many products through contracts
 Name
 Description
 Location
@@ -27,16 +27,15 @@ Twitter
 Owner name
 
 Artists
+-belong to users
 -have many products
--belong to many vendors (sell their products at various vendors)
 Name
 Description
 Email
 
 Products
--belong to many vendors
+-belong to many vendors through contracts
 -belong to one artist
--belong to one category
 Name
 Description
 Price
