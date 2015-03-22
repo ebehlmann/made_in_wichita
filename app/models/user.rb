@@ -10,4 +10,7 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 	validates :password, length: { minimum: 6 }
+
+	has_many :vendors
+	has_many :products
 end
